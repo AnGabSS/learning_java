@@ -4,6 +4,9 @@ import br.com.screenmatch.modelos.Filme;
 import br.com.screenmatch.modelos.Serie;
 import br.com.screenmatch.modelos.Titulo;
 
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.ArrayList;
 
 public class PrincipalComListas {
@@ -18,11 +21,15 @@ public class PrincipalComListas {
 
         Filme f1 = filmeDoPaulo;
 
-        ArrayList<Titulo> lista = new ArrayList<>();
+        List<Titulo> lista = new ArrayList<>();
         lista.add(filmeDoPaulo);
         lista.add(meuFilme);
         lista.add(outroFilme);
         lista.add(lost);
+
+        Collections.sort(lista);
+        System.out.println(lista);
+
         for (Titulo item: lista) {
             System.out.println(item.getNome());
             if (item instanceof  Filme filme && filme.getClassificacao() > 2) {
